@@ -1,1 +1,1 @@
-# Oracle WDP ¼ö°­Áß
+# Oracle WDP ìˆ˜ê°•ì¤‘
