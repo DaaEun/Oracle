@@ -68,4 +68,38 @@ SET PAGESIZE 1000
 SELECT last_name, TO_CHAR(hire_date, 'fmDD Month YYYY') AS HIREDATE FROM employees; -- 한자리 수는 한자리만 차지
 SELECT last_name, TO_CHAR(hire_date, 'DD Month YYYY') AS HIREDATE FROM employees;   -- 한자리 수도 두자리 차지
 
+SELECT SYSDATE - TO_DATE('03--  15///2020', 'MM--DD///YYYY') FROM DUAL;
+SELECT SYSDATE - TO_DATE('03--  15///2020', 'fxMM--DD///YYYY') FROM DUAL;   --(X)
+SELECT SYSDATE - TO_DATE('03--  15///2020', 'fxMM--  DD///YYYY') FROM DUAL;
+
+-- NVL : NULL이 있는 경우에 NULL이 아닌 다른 값으로 변환시켜주는 함수
+-- 계산값이 NULL이 나오는 게 보기 싫을 때 주로 사용
+SELECT EMPLOYEE_ID, COMMISSION_PCT, NVL(COMMISSION_PCT,0) COMM
+FROM EMPLOYEES
+WHERE DEPARTMENT_ID=60;
+
+SELECT EMPLOYEE_ID, COMMISSION_PCT,
+NVL(COMMISSION_PCT, 'no commission') COMM
+FROM EMPLOYEES
+WHERE DEPARTMENT_ID=60; --(x) 숫자데이터에 문자데이터를 기입할 수 없다. 암시적 변환이 일어나지 않아 데이터 일치해야한다.
+
+SELECT EMPLOYEE_ID, COMMISSION_PCT,
+NVL(TO_CHAR(COMMISSION_PCT), 'no commission') COMM
+FROM EMPLOYEES
+WHERE DEPARTMENT_ID=60;
+
+-- NVL2
+-- commission_pct 값이 null이 아니면 'SAL+COMM' 라고 PRINT하고
+-- commission_pct 값이 null이면 'SAL'이라고 PRINT해라.
+-- 데이터 유형과는 관계없다.
+SELECT last_name, salary, commission_pct,
+NVL2(commission_pct, 'SAL+COMM', 'SAL') income  -- income 이라는 가상의 칼럼 생성
+FROM EMPLOYEES;
+
+
+
+
+
+
+
 
