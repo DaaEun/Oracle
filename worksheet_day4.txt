@@ -1,0 +1,401 @@
+﻿[oracle@edydr1p1 ~]$ sqlplus / as sysdba
+
+
+SQL*Plus: Release 12.1.0.2.0 Production on Sun Aug 15 15:47:09 2021
+
+
+Copyright (c) 1982, 2014, Oracle.  All rights reserved.
+
+
+Connected to an idle instance.
+
+
+SQL> exit    
+Disconnected
+[oracle@edydr1p1 ~]$ echo $ORACLE_HOME
+/u01/app/oracle/product/12.1.0/dbhome_1
+[oracle@edydr1p1 ~]$ echo $ORACLE_SID
+orcl
+[oracle@edydr1p1 ~]$ ps -ef|grep orcl
+oracle    7381  7287  0 16:02 pts/0    00:00:00 grep orcl
+[oracle@edydr1p1 ~]$ sqlplus / as sysdba
+
+
+SQL*Plus: Release 12.1.0.2.0 Production on Sun Aug 15 16:04:06 2021
+
+
+Copyright (c) 1982, 2014, Oracle.  All rights reserved.
+
+
+Connected to an idle instance.
+
+
+SQL> startup
+ORACLE instance started.
+
+
+Total System Global Area  536870912 bytes
+Fixed Size                    2926472 bytes
+Variable Size                  281020536 bytes
+Database Buffers          247463936 bytes
+Redo Buffers                    5459968 bytes
+Database mounted.
+Database opened.
+SQL> exit
+Disconnected from Oracle Database 12c Enterprise Edition Release 12.1.0.2.0 - 64bit Production
+With the Partitioning, OLAP, Advanced Analytics and Real Application Testing options
+[oracle@edydr1p1 ~]$ ps -ef|grep orcl
+oracle    7390     1  0 16:04 ?        00:00:00 ora_pmon_orcl
+oracle    7392     1  0 16:04 ?        00:00:00 ora_psp0_orcl
+oracle    7394     1  1 16:04 ?        00:00:01 ora_vktm_orcl
+oracle    7398     1  0 16:04 ?        00:00:00 ora_gen0_orcl
+oracle    7400     1  0 16:04 ?        00:00:00 ora_mman_orcl
+oracle    7404     1  0 16:04 ?        00:00:00 ora_diag_orcl
+oracle    7406     1  0 16:04 ?        00:00:00 ora_dbrm_orcl
+oracle    7408     1  0 16:04 ?        00:00:00 ora_vkrm_orcl
+oracle    7410     1  0 16:04 ?        00:00:00 ora_dia0_orcl
+oracle    7412     1  0 16:04 ?        00:00:00 ora_dbw0_orcl
+oracle    7414     1  0 16:05 ?        00:00:00 ora_lgwr_orcl
+oracle    7416     1  0 16:05 ?        00:00:00 ora_ckpt_orcl
+oracle    7418     1  0 16:05 ?        00:00:00 ora_lg00_orcl
+oracle    7420     1  0 16:05 ?        00:00:00 ora_smon_orcl
+oracle    7422     1  0 16:05 ?        00:00:00 ora_lg01_orcl
+oracle    7424     1  0 16:05 ?        00:00:00 ora_reco_orcl
+oracle    7426     1  0 16:05 ?        00:00:00 ora_lreg_orcl
+oracle    7428     1  0 16:05 ?        00:00:00 ora_pxmn_orcl
+oracle    7430     1  2 16:05 ?        00:00:02 ora_mmon_orcl
+oracle    7432     1  0 16:05 ?        00:00:00 ora_mmnl_orcl
+oracle    7434     1  0 16:05 ?        00:00:00 ora_d000_orcl
+oracle    7436     1  0 16:05 ?        00:00:00 ora_s000_orcl
+oracle    7448     1  0 16:05 ?        00:00:00 ora_p000_orcl
+oracle    7450     1  0 16:05 ?        00:00:00 ora_p001_orcl
+oracle    7452     1  0 16:05 ?        00:00:00 ora_tmon_orcl
+oracle    7454     1  0 16:05 ?        00:00:00 ora_tt00_orcl
+oracle    7456     1  0 16:05 ?        00:00:00 ora_smco_orcl
+oracle    7458     1  0 16:05 ?        00:00:00 ora_w000_orcl
+oracle    7460     1  0 16:05 ?        00:00:00 ora_w001_orcl
+oracle    7462     1  0 16:05 ?        00:00:00 ora_aqpc_orcl
+oracle    7466     1  0 16:05 ?        00:00:00 ora_p002_orcl
+oracle    7468     1  1 16:05 ?        00:00:01 ora_cjq0_orcl
+oracle    7470     1  0 16:05 ?        00:00:00 ora_p003_orcl
+oracle    7472     1  0 16:05 ?        00:00:00 ora_p004_orcl
+oracle    7474     1  0 16:05 ?        00:00:00 ora_p005_orcl
+oracle    7476     1  0 16:05 ?        00:00:00 ora_p006_orcl
+oracle    7478     1  0 16:05 ?        00:00:00 ora_p007_orcl
+oracle    7633     1  0 16:05 ?        00:00:00 ora_qm02_orcl
+oracle    7635     1  0 16:05 ?        00:00:00 ora_qm03_orcl
+oracle    7637     1  0 16:05 ?        00:00:00 ora_q002_orcl
+oracle    7639     1  0 16:05 ?        00:00:00 ora_q003_orcl
+oracle    7641     1  0 16:05 ?        00:00:00 ora_q004_orcl
+oracle    7677  7287  0 16:06 pts/0    00:00:00 grep orcl
+[oracle@edydr1p1 ~]$ sqlplus / as sysdba
+
+
+SQL*Plus: Release 12.1.0.2.0 Production on Sun Aug 15 16:07:37 2021
+
+
+Copyright (c) 1982, 2014, Oracle.  All rights reserved.
+
+
+
+
+Connected to:
+Oracle Database 12c Enterprise Edition Release 12.1.0.2.0 - 64bit Production
+With the Partitioning, OLAP, Advanced Analytics and Real Application Testing options
+
+
+SQL> select instance_name from v$instane;
+select instance_name from v$instane
+                          *
+ERROR at line 1:
+ORA-00942: table or view does not exist
+
+
+
+
+Elapsed: 00:00:00.00
+SQL> select instance_name from v$instance;
+
+
+INSTANCE_NAME
+----------------
+orcl
+
+
+1 row selected.
+
+
+Elapsed: 00:00:00.00
+SQL> select name from v$database;
+
+
+NAME
+---------
+ORCL
+
+
+1 row selected.
+
+
+Elapsed: 00:00:00.00
+SQL> shutdown 
+Database closed.
+Database dismounted.
+ORACLE instance shut down.
+SQL> 
+
+
+
+
+INSTANCE는 SGA(Shared(System) Global Area)라는 메모리 영역과 
+여러개의 BACKGROUND PROCESS들로 구성이 되어 있습니다.
+
+
+DATABASE는 여러 종류의 파일들로 구성이 되어 있다 
+DATAFILE(데이타저장소 역할),
+CONTROL FILE, REDO LOG FILE, PARAMETER FILE
+
+
+<<FILE정보 조회>>
+[oracle@edydr1p1 ~]$ sqlplus / as sysdba
+
+
+SQL*Plus: Release 12.1.0.2.0 Production on Sun Aug 15 16:18:27 2021
+
+
+Copyright (c) 1982, 2014, Oracle.  All rights reserved.
+
+
+Connected to an idle instance.
+
+
+SQL> startup
+ORACLE instance started.
+
+
+Total System Global Area  536870912 bytes
+Fixed Size                    2926472 bytes
+Variable Size                  281020536 bytes
+Database Buffers          247463936 bytes
+Redo Buffers                    5459968 bytes
+Database mounted.
+Database opened.
+
+
+SQL> select * from v$datafile;
+
+
+     FILE# CREATION_CHANGE# CREATION_             TS#     RFILE# STATUS  ENABLED    CHECKPOINT_CHANGE# CHECKPOIN UNRECOVERABLE_CHANGE# UNRECOVER
+---------- ---------------- --------- ---------- ---------- ------- ---------- ------------------ --------- --------------------- ---------
+LAST_CHANGE# LAST_TIME OFFLINE_CHANGE# ONLINE_CHANGE# ONLINE_TI      BYTES     BLOCKS CREATE_BYTES BLOCK_SIZE
+------------ --------- --------------- -------------- --------- ---------- ---------- ------------ ----------
+NAME
+------------------------------------------------------------------------------------------------------------------------------------------------------
+PLUGGED_IN BLOCK1_OFFSET
+---------- -------------
+AUX_NAME
+------------------------------------------------------------------------------------------------------------------------------------------------------
+FIRST_NONLOGGED_SCN FIRST_NON FOREIGN_DBID FOREIGN_CREATION_CHANGE# FOREIGN_C PLU PLUGIN_CHANGE# PLUGIN_RESETLOGS_CHANGE# PLUGIN_RE        CON_ID
+------------------- --------- ------------ ------------------------ --------- --- -------------- ------------------------ --------- ----------
+         1                  7 07-JUL-14               0          1 SYSTEM  READ WRITE          2774085 15-AUG-21                        0
+                               1594142              1594143 11-MAR-17  838860800     102400                 0         8192
+/u01/app/oracle/oradata/orcl/system01.dbf
+         0            8192
+NONE
+                  0                         0                          0              NO       0                        0                     0
+
+
+         3               4180 07-JUL-14               1          3 ONLINE  READ WRITE          2774085 15-AUG-21                        0
+                               1594142              1594143 11-MAR-17  723517440        88320                 0         8192
+/u01/app/oracle/oradata/orcl/sysaux01.dbf
+         0            8192
+NONE
+                  0                         0                          0              NO       0                        0                     0
+
+
+         4            1591076 07-JUL-14               2          4 ONLINE  READ WRITE          2774085 15-AUG-21                        0
+                               1594142              1594143 11-MAR-17  157286400        19200                 0         8192
+/u01/app/oracle/oradata/orcl/undotbs01.dbf
+         0            8192
+NONE
+                  0                         0                          0              NO       0                        0                     0
+
+
+         5            1609596 11-MAR-17               6         10 ONLINE  READ WRITE          2774085 15-AUG-21                        0
+                               1609621              1609954 11-MAR-17 1304166400     159200         104857600         8192
+/u01/app/oracle/oradata/orcl/example01.dbf
+         0            8192
+NONE
+                  0                4180948263                    1566600 07-JUL-14 NO 1599245                  1594143 11-MAR-17             0
+
+
+         6              24908 07-JUL-14               4          6 ONLINE  READ WRITE          2774085 15-AUG-21                        0
+                               1594142              1594143 11-MAR-17    5242880          640                 0         8192
+/u01/app/oracle/oradata/orcl/users01.dbf
+         0            8192
+NONE
+                  0                         0                          0              NO       0                        0                     0
+
+
+
+
+5 rows selected.
+
+
+Elapsed: 00:00:00.01
+
+
+
+
+
+
+
+
+
+
+SQL> select name from v$datafile;
+
+
+NAME
+------------------------------------------------------------------------------------------------------------------------------------------------------
+/u01/app/oracle/oradata/orcl/system01.dbf
+/u01/app/oracle/oradata/orcl/sysaux01.dbf
+/u01/app/oracle/oradata/orcl/undotbs01.dbf
+/u01/app/oracle/oradata/orcl/example01.dbf
+/u01/app/oracle/oradata/orcl/users01.dbf
+
+
+5 rows selected.
+
+
+Elapsed: 00:00:00.01
+SQL> select * from v$controlfile;
+
+
+STATUS
+-------
+NAME
+------------------------------------------------------------------------------------------------------------------------------------------------------
+IS_ BLOCK_SIZE FILE_SIZE_BLKS          CON_ID
+--- ---------- -------------- ----------
+
+
+/u01/app/oracle/oradata/orcl/control01.ctl
+NO         16384                  612               0
+
+
+
+
+/u01/app/oracle/fast_recovery_area/orcl/control02.ctl
+NO         16384                  612               0
+
+
+
+
+2 rows selected.
+
+
+Elapsed: 00:00:00.03
+SQL> select * from v$log;
+
+
+    GROUP#    THREAD#  SEQUENCE#      BYTES  BLOCKSIZE          MEMBERS ARC STATUS               FIRST_CHANGE# FIRST_TIM NEXT_CHANGE# NEXT_TIME          CON_ID
+---------- ---------- ---------- ---------- ---------- ---------- --- ---------------- ------------- --------- ------------ --------- ----------
+         1            1              19   52428800           512                1 NO  INACTIVE             2567883 30-MAY-20            2671030 31-MAY-20               0
+         2            1              20   52428800           512                1 NO  INACTIVE             2671030 31-MAY-20            2772205 15-AUG-21               0
+         3            1              21   52428800           512                1 NO  CURRENT             2772205 15-AUG-21         2.8147E+14                       0
+
+
+3 rows selected.
+
+
+Elapsed: 00:00:00.02
+
+
+
+
+
+
+SQL> select * from v$logfile;
+
+
+    GROUP# STATUS  TYPE
+---------- ------- -------
+MEMBER
+------------------------------------------------------------------------------------------------------------------------------------------------------
+IS_        CON_ID
+--- ----------
+         3           ONLINE
+/u01/app/oracle/oradata/orcl/redo03.log
+NO             0
+
+
+         2           ONLINE
+/u01/app/oracle/oradata/orcl/redo02.log
+NO             0
+
+
+         1           ONLINE
+/u01/app/oracle/oradata/orcl/redo01.log
+NO             0
+
+
+
+
+3 rows selected.
+
+
+Elapsed: 00:00:00.00
+SQL> 
+
+
+ORACLE_HOME : 오라클 서버 소프트웨어가 설치되어 있는 홈 디렉토리
+ORACLE_SID : 설치되어 있는 오라클 서버의 INSTANCE이름
+
+
+오라클 서버를 사용하기 위해서는 
+1. INSTANCE를 STARTUP을 해야 한다.
+   (SGA가 사용할 메모리 공간을 확보,BACKGROUND PROCESS들을 시작)
+   -> INSTANCE에는 이름이 하나 셋업이 된다 
+      INSTANCE_NAME이라고 한다. INSTANCE이름은 대소문자 구분 사용.
+   -> CLIENT(DB USER)가 오라클 서버에 접속하려면 INSTANCE에 CONNECT를 
+      해야 한다.
+      sqlplus / as sysdba (SYSDBA 권한을 가지고 오라클 서버에 CONNECT 
+      하겠다. 이 때 만약에 오라클 INSTANCE가 STARTUP이 안되어 있으면 
+      STARTUP을 할 수 있다. SYSDBA권한을 가지면 ORACLE INSTANCE를 
+      STARTUP할 수 있는 권한이 있기 때문이다) => SYS user로 connect된다
+
+
+
+
+
+
+
+
+INSTANCE = SGA + BACKGROUND PROCESSES
+데이타베이스를 사용하기 위해서는 INSTANCE STARTUP을 해야 합니다. 
+INSTANCE를 STARTUP 하는 데 있어서 STARTUP의 단계(STAGE)가 있다.
+
+
+1.  NOMOUNT 
+    SGA MEMORY 영역 할당
+    BACKGROUND PROCESS들이 시작된 상태
+    PARAMETER FILE의 내용을 확인해서 INSTANCE의 환경을 셋업  
+    : 만약에 PARAMETER FILE에 문제가 있으면 NOMOUNT 작업이 실패를 하게 된다.
+
+
+2. MOUNT 
+   CONTROL FILE 안에 내용이 확인을 하는 단계 
+   만약에 이전에 INSTANCE가 비정상적으로 종료된 경우 
+   MOUNT 단계에서 SMON PROCESS가 CONTROL FILE의 내용을 근거로 해서 
+   INSTANCE RECOVERY 작업이 필요한지에 대해서 확인하는 작업을 진행 
+   : 만약에 CONTROL FILE에 문제가 있으면 MOUNT단계가 실패.
+
+
+3. OPEN 
+   CONTROL FILE에는 물리적인 파일 정보를 가지고 있다
+   예를 들면 DATAFILE, REDO LOG FILE이 몇개가 존재하는지 
+   그리고 DATAFILE, REDO LOG FILE이 어느 위치에 어떤 이름으로 만들어져 있는지에 대한 정보를 가지고 있는데
+   이러한 정보들을 근거로 해서 실제 DATAFILE과 REDO LOG FILE에 문제가 없는지를 확인하는 작업 진행 
+   만약에 손상된 내용이 확인되면 OPEN이 실패하게 됩니다. 
+   정상적인 상태가 확인이 되면 OPEN이 완료되고 외부 사용자들이 DB CONNECT를 할 수 있게 된다.
