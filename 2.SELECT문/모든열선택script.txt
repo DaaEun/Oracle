@@ -10,5 +10,5 @@ DEPARTMENT_ID DEPARTMENT_NAME                MANAGER_ID LOCATION_ID
           110 Accounting                            205        1700
           190 Contracting                                      1700
 
-8°³ ÇàÀÌ ¼±ÅÃµÇ¾ú½À´Ï´Ù. 
+8ê°œ í–‰ì´ ì„ íƒë˜ì—ˆìŠµë‹ˆë‹¤.
 
