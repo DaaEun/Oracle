@@ -11,4 +11,3 @@ DEPARTMENT_ID DEPARTMENT_NAME                MANAGER_ID LOCATION_ID
           190 Contracting                                      1700
 
 8개 행이 선택되었습니다.
-
