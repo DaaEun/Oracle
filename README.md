@@ -1,1 +1,1 @@
-# Oracle WDP �닔媛뺤쨷
+# Oracle WDP 수강중
